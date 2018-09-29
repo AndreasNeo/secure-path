@@ -2,7 +2,7 @@
 Android app with distributed backend for finding safe routes to a destination based on past crime incidents in England and allows the user to visualise and view information of recent crimes on a map. 
 
 # Architecture Diagram
-[[.SecurePath_Figures/SecurePath_ArchitetureDiagram.jpg|alt=SecurePath_ArchitetureDiagram]]
+<img src="/SecurePath_Figures/SecurePath_ArchitetureDiagram.jpg" height="500" width="650">
 
 # Requirements
 Java SE Deveopment Kit (JDK) 8
@@ -77,4 +77,7 @@ ________________________________________________________________________________
 	d. Press Play button and run it on an Emulator or an External device.
 	e. If Error: split lib_slice_2_apk was defined multiple times / Error installing APK then: File -> Settings -> Build,Execution,Depolyment -> Instand Run -> Untick Enable Instant Run ...
 
+# Screenshots
 
+<img src="/SecurePath_Figures/crime_heatmap.png" height="500" width="280">    <img src="/SecurePath_Figures/crime_pointers.png" height="500" width="280">
+<img src="/SecurePath_Figures/crime_pointer_information.png" height="500" width="280">    <img src="/SecurePath_Figures/spark_directions.png" height="500" width="280">   <img src="/SecurePath_Figures/safest_route.png" height="500" width="280">   <img src="/SecurePath_Figures/data.png" height="500" width="280">
