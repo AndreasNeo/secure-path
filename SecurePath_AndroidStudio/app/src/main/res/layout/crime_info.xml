@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:behavior_hideable="true"
+    android:clickable="true"
+    app:behavior_peekHeight="50dp"
+    android:background="#E6E3E4E5"
+    android:weightSum="4"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@android:color/holo_red_dark"
+        android:weightSum="10">
+
+        <ImageButton
+            android:id="@+id/closeSheet"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@android:drawable/ic_menu_close_clear_cancel" />
+
+        <TextView
+        android:id="@+id/bottom_title"
+        android:layout_width="0dp"
+        android:layout_weight="8"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Crime count"
+        android:textColor="@android:color/white" />
+
+        <ImageButton
+            android:id="@+id/openSheet"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@android:drawable/arrow_up_float" />
+
+    </LinearLayout>
+        <fragment
+            android:layout_weight="2"
+            android:name="com.google.android.gms.maps.StreetViewPanoramaFragment"
+            android:id="@+id/streetviewpanorama"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+    <ListView
+        android:layout_weight="2"
+        android:id="@+id/bottom_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:elevation="0dp"
+        android:textColor="@color/place_autocomplete_prediction_primary_text_highlight"
+        tools:textColor="@color/place_autocomplete_prediction_primary_text_highlight" />
+
+</LinearLayout>

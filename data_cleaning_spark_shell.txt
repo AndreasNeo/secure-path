@@ -1,0 +1,41 @@
+1. Load the CSV to create a DataFrame
+2. Perform Untyped Transformations on DataFrame. This means, filtering out crimes with null latitude or longitude, dropping the columns that are not needed and renaming “Crime type column to “Type”
+3. Register DataFrame as SQL table, so that SparkSQL can execute SQL queries on it.
+4. The fourth line of code does the following: 
+	a) Adds weights to Crime types, 
+	b) Groups crimes with the same Lat/Lng, 
+	c) SUM the weights of every crime in a particular Lat/Lng, 
+	d) Counts the Crimes of a particular Lat/Lng.
+5. The names of the new columns are created.
+6. Creates a structured DataFrame with these column names.
+7. Creates a Hive Table “crimeSum” in the “SecurePathDB” database.
+8. The Action: Write the DataFrame to the Hive Table.
+---------------------------------------------------------------------------------------------------
+1.	var crimeDF = spark.read.format("csv").option("header","true").load("D:/FYP/crimes/*/*.csv")
+
+2.	val cleanCrimeDF = crimeDF.filter($"latitude".isNotNull || $"longitude".isNotNull)
+	.drop("Crime ID").drop("Reported by").drop("Falls
+	within").drop("Location").drop("LSOA code").drop("LSOA name").drop("Last outcome
+	category").drop("Context").withColumnRenamed("Crime type", "Type")
+
+3.	cleanCrimeDF.createOrReplaceTempView("table")
+
+4.	val crimesSeriousnessCount =
+	sql("SELECT Latitude,Longitude, SUM(CASE WHEN Type= 'Violence and sexual offences'
+	THEN 3 WHEN Type='Drugs' THEN 3 WHEN Type= 'Robbery' THEN 3 WHEN Type='Vehicle crime'
+	THEN 3 WHEN Type= 'Criminal damage and arson' THEN 3 WHEN Type= 'Possession of
+	weapons' THEN 3 WHEN Type='Anti-social behaviour' THEN 3 WHEN Type='Burglary' THEN 2
+	WHEN Type= 'Public order' THEN 2 WHEN Type='Theft from the person' THEN 2 WHEN Type=
+	'Shoplifting' THEN 1 WHEN Type='Bicycle theft' THEN 1 WHEN Type= 'Other crime' THEN 1
+	WHEN Type='Other theft' THEN 1 ELSE 0 END), count(1) FROM table GROUP BY
+	Latitude,Longitude Having count(*)>0")
+
+5.	val colName = Seq("Latitude","Longitude","Seriousness","Crime_Count")
+
+6.	val crimesRenamedCol = crimesSeriousnessCount.toDF(colName: _*)
+
+7.	sql("CREATE TABLE IF NOT EXISTS securepathdb.crimeSum (Latitude DOUBLE, Longitude
+	DOUBLE, Seriousness INTEGER, Crime_Count INTEGER ) USING hive")
+
+8.	crimesRenamedCol.write.mode("append").format("hive").saveAsTable("securepathdb.crimeS
+um")

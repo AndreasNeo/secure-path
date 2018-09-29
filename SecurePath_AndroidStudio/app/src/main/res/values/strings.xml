@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SecurePath</string>
+    <string name="btn_find_crimes">Find Crimes</string>
+    <string name="google_status_fmt" formatted="false">%1$s</string>
+    <string name="firebase_status_fmt" formatted="false">%1$s</string>
+    <string name="signed_out">Signed Out</string>
+    <string name="signe_in_btn">Sign In</string>
+    <string name="sign_out_btn">Sign Out</string>
+    <string name="map_button">Show On Map</string>
+    <string name="title_activity_maps_http">Map</string>
+    <string name="title_activity_maps__directions_">Map</string>
+    <string name="title_activity_spark_map">Map</string>
+    <string name="title_activity_directions_predict">Map</string>
+    <string name="info">The data used in this application is provided by the UK Police Database and is licenced by the Open Government Licence. https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/</string>
+</resources>

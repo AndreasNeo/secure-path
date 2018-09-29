@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sat Sep 29 01:41:15 BST 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0166-22c5-b7e0-00001999e790 
+on database directory memory:D:\GitHub\FYP_uploaded\SecurePath_Data with class loader sun.misc.Launcher$AppClassLoader@73a8dfcc 
+Loaded from file:/D:/SoftwareFiles/spark/jars/derby-10.12.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_152-b16
+user.dir=D:\GitHub\FYP_uploaded\SecurePath_Data
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

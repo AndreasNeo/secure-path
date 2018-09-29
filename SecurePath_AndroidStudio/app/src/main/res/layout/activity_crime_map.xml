@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="andreasneokleous.com.securepath.CrimeMapActivity" >
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="25sp"
+        card_view:cardCornerRadius="6dp">
+
+        <fragment
+            android:id="@+id/place_autocomplete_search"
+            android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </android.support.v7.widget.CardView>
+    </fragment>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:orientation="vertical"
+        app:layout_anchor="@+id/map"
+        app:layout_anchorGravity="bottom">
+
+        <com.github.clans.fab.FloatingActionButton
+
+            android:id="@+id/fab_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/fab_location"
+            android:layout_alignStart="@+id/fab_map"
+            android:src="@android:drawable/ic_menu_info_details"
+            app:fab_colorNormal="@color/common_google_signin_btn_text_light_default"
+            app:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/fab_info"
+            android:src="@android:drawable/ic_menu_mapmode"
+            app:fab_colorNormal="@color/common_google_signin_btn_text_light_default"
+            app:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/fab_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/fab_location"
+            android:layout_alignParentEnd="true"
+            app:menu_backgroundColor="@android:color/transparent"
+            app:menu_colorNormal="@android:color/holo_blue_dark"
+            app:menu_fab_label=""
+            app:menu_icon="@android:drawable/ic_menu_directions"
+            app:menu_openDirection="up"
+            app:menu_showShadow="true">
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_dir_predict"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_directions"
+                app:fab_colorNormal="@android:color/holo_blue_light"
+                app:fab_label="Predict Directions"
+                app:fab_size="mini"
+
+                />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_dir_spark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_directions"
+                app:fab_colorNormal="@android:color/holo_blue_light"
+                app:fab_label="4 Year Spark Directions"
+                app:fab_size="mini" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_dir_police"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_directions"
+                app:fab_colorNormal="@android:color/holo_blue_light"
+                app:fab_label="1 Month Police.uk Directions"
+                app:fab_size="mini" />
+
+
+        </com.github.clans.fab.FloatingActionMenu>
+
+
+        <com.github.clans.fab.FloatingActionButton
+
+            android:id="@+id/fab_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="54dp"
+            android:src="@android:drawable/ic_menu_mylocation"
+            app:fab_colorNormal="@color/common_google_signin_btn_text_light_default" />
+
+
+    </RelativeLayout>
+
+    <include layout="@layout/crime_info" />
+
+</android.support.design.widget.CoordinatorLayout>
