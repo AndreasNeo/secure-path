@@ -1,6 +1,9 @@
 # SecurePath
 Android app with distributed backend for finding safe routes to a destination based on past crime incidents in England and allows the user to visualise and view information of recent crimes on a map. 
 
+# Architecture Diagram
+[[.SecurePath_Figures/SecurePath_ArchitetureDiagram.jpg|alt=SecurePath_ArchitetureDiagram]]
+
 # Requirements
 Java SE Deveopment Kit (JDK) 8
 winutils.exe for handoop-2.7.1
