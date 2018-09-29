@@ -81,3 +81,4 @@ ________________________________________________________________________________
 
 <img src="/SecurePath_Figures/crime_heatmap.png" height="500" width="280">    <img src="/SecurePath_Figures/crime_pointers.png" height="500" width="280">
 <img src="/SecurePath_Figures/crime_pointer_information.png" height="500" width="280">    <img src="/SecurePath_Figures/spark_directions.png" height="500" width="280">   <img src="/SecurePath_Figures/safest_route.png" height="500" width="280">   <img src="/SecurePath_Figures/data.png" height="500" width="280">
+
