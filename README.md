@@ -1,5 +1,5 @@
 # SecurePath
-Android App with Distributed Backend for Finding and Predicting Safe Routes
+Android app with distributed backend for finding safe routes to a destination based on past crime incidents in England and allows the user to visualise and view information of recent crimes on a map. 
 
 # Requirements
 Java SE Deveopment Kit (JDK) 8
