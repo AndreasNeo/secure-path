@@ -1,5 +1,5 @@
 # SecurePath
-Android app with distributed backend for finding safe routes to a destination based on past crime incidents in England and allows the user to visualise and view information of recent crimes on a map. 
+Android app with distributed backend for finding safe routes to a destination based on past crime incidents in England and allows the user to visualize and view information of recent crimes on a map. 
 
 # Architecture Diagram
 <img src="/SecurePath_Figures/SecurePath_ArchitetureDiagram.jpg" height="500" width="650">
